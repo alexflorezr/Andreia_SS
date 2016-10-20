@@ -1,9 +1,9 @@
 setwd("/Users/afr/Desktop/PhD/Collaborations/Andreia_SS/Data")
-library(ips)
 ### I used find "\t0(\d+_\w\d+)" replace with "\t\1" in the original .nex to ... 
 ### ... remove the zeros in front of some ids, Also, I used find "(_H)0(\d+)" ...
 ### ... to remove the zeros in front of the haplotypes IDs (e.g. HO1 -> H1)
 add.pop2nex <- function(nexus_file, data.csv){
+require(ips)
 seq_nex <- read.nex(nexus_file)
 pop_csv <- read.csv2(data.csv, header = T, stringsAsFactors = F, sep = ",")
 new_id.v <- vector(length = dim(pop_csv)[1])
