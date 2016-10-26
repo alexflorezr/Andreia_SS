@@ -1,6 +1,7 @@
 ### Plots a haplotype network using all populations
 net_andreia <- function(pop_nex){
 require(pegas)
+require(stringr)
 temp_hap <- haplotype(pop_nex)
 sort(temp_hap, what = "label")
 ind.hap <- with(
